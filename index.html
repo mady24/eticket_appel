@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body class="h100 p-0 m-0">
+  <div class="row h100_h60 p-0 m-0">
+    <div class="col-3">
+      <img src="./assets/logo/banque.png" alt="logo" class="h100_h60">
+    </div>
+    <div class="col-6 p-3 text-center">
+      <span class="">Bienvenue a l'agence <b class="agency-name">Agence Test</b></span>
+    </div>
+    <div class="col-3">
+      <img src="./assets/logo/logo_color.png" alt="logo" class="h100_h60 float-end">
+    </div>
+  </div>
+  <div class="row h100_120 w-100  p-0 m-0">
+    <div class="col-4 h-100 row  p-0 m-0">
+      <div class="col-12 h10">
+        <span class="h1 text-center">Tickets appelés</span>
+      </div>
+      <div class="col-12" id="calledTickets">
+
+      </div>
+
+    </div>
+    <div class="col-8 h-100 row  p-0 m-0">
+      <div class="col-12 h10">
+        <span class="h1 text-center">Dernier Ticket appelé</span>
+      </div>
+      <div class="col-12 h15" id="lastTicketCalled">
+        <div class="card border-0 p-1">
+          <div class="card-body border rounded  h1 row p-0 m-0 text-center">
+            <div class="col-6 p-0">
+              <b>Service:</b><br /> Caisse
+            </div>
+            <div class="col-6 p-0">
+              <b>Clients:</b><br /> 1
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="advertising col-12 h75 p-1">
+        <div class="carousel slide " id="carouselExampleSlidesOnly" data-bs-ride="carousel"
+          style="height:calc(100% - 0.5rem) !important;">
+          <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+              <img src="./assets/logo/images.jpg" class="d-block w-100 h-100" alt="...">
+            </div>
+            <div class="carousel-item h-100">
+              <iframe class="h-100 w-100" src="https://www.youtube.com/embed/z2fsqEFN-F0?autoplay=1&mute=1&loop=1">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="./js/index.js"> </script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"> </script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"> </script>
+
+</html>
