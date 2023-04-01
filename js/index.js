@@ -1,3 +1,48 @@
+class TicketService {
+     route_root = '';
+     routes = {};
+    constructor() {
+        this.route_root = "https://api.eticket.sn/eticket"
+        this.routes = {
+            "simulate-code": "/home-app/simulate/terminal-access-code",
+            "simulate-notification": "/home-app/simulate/notification",
+            "notification-tocken": "/home-app/notification-token/",
+        }
+    }
+
+    simulateCode() {
+        var request = new XMLHttpRequest();
+        request.open("GET", this.route_root + this.routes["simulate-code"], true);
+        request.setRequestHeader("accept","*/*"); 
+        request.onreadystatechange = function () {
+            console.log(this);
+        }
+        request.send();
+    }
+
+    simulateCode() {
+        var request = new XMLHttpRequest();
+        request.open("GET", this.route_root + this.routes["simulate-code"], true);
+        request.onreadystatechange = function () {
+            console.log(this);
+        }
+        request.send();
+    }
+
+    simulateCode() {
+        var request = new XMLHttpRequest();
+        request.open("GET", this.route_root + this.routes["simulate-code"], true);
+        request.onreadystatechange = function () {
+            console.log(this);
+        }
+        request.send();
+    }
+}
+
+ticketSerice = new TicketService();
+
+ticketSerice.simulateCode();
+
 var calledTicketsSection = document.getElementById('calledTickets');
 var lastTicketCalled = document.getElementById('lastTicketCalled');
 
