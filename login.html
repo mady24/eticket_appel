@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body class="h100 p-0 m-0">
+    <div class="row p-0 m-0 h100">
+        <div class="col-3">
+
+        </div>
+        <div class="col-6 h100 p-auto">
+            <form>
+                <div class="mb-3">
+                    <label for="code" class="form-label">Code d'acces</label>
+                    <input type="number" class="form-control" id="code" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="submitCode();">Submit</button>
+            </form>
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    function submitCode() {
+        // console.log(document.getElementById('code').value);
+        const data = JSON.stringify({
+            "accessCode": document.getElementById('code').value,
+            "app": "HOME_APP"
+        });
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "https://api.eticket.sn/eticket/auth/terminal/login");
+        xhr.setRequestHeader("accept", "*/*");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send(data);
+    }
+</script>
+
+</html>
