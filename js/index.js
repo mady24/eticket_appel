@@ -11,27 +11,45 @@ class TicketService {
     }
 
     simulateCode() {
+        /*var request = new XMLHttpRequest();
+        request.open("GET", this.route_root + this.routes["simulate-code"], true);*/
+        //request.setRequestHeader("Accept","*/*"); 
+        /*request.onreadystatechange = function () {
+            console.log(this);
+        }
+        console.log(request);
+        request.send();*/
+
+
+        ////
+        const xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("GET", "https://api.eticket.sn/eticket/home-app/simulate/terminal-access-code");
+        xhr.setRequestHeader("accept", "*/*");
+
+        xhr.send();
+
+    }
+
+    simulateNotification() {
         var request = new XMLHttpRequest();
-        request.open("GET", this.route_root + this.routes["simulate-code"], true);
-        request.setRequestHeader("accept","*/*"); 
+        request.open("GET", this.route_root + this.routes["simulate-notification"], true);
         request.onreadystatechange = function () {
             console.log(this);
         }
         request.send();
     }
 
-    simulateCode() {
+    simulateToken() {
         var request = new XMLHttpRequest();
-        request.open("GET", this.route_root + this.routes["simulate-code"], true);
-        request.onreadystatechange = function () {
-            console.log(this);
-        }
-        request.send();
-    }
-
-    simulateCode() {
-        var request = new XMLHttpRequest();
-        request.open("GET", this.route_root + this.routes["simulate-code"], true);
+        request.open("GET", this.route_root + this.routes["notification-tocken"], true);
         request.onreadystatechange = function () {
             console.log(this);
         }
