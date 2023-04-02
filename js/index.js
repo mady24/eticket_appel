@@ -61,6 +61,10 @@ ticketSerice = new TicketService();
 
 ticketSerice.simulateCode();
 
+if (!sessionStorage.access_tocken){
+    location.href = location.protocol + '//' + location.host + '/login.html';
+}
+
 var calledTicketsSection = document.getElementById('calledTickets');
 var lastTicketCalled = document.getElementById('lastTicketCalled');
 
