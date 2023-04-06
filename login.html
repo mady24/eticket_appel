@@ -47,7 +47,8 @@
             }
         });
 
-        xhr.open("GET", "https://api.eticket.sn/eticket/auth/terminal/login/"+document.getElementById('code').value+"/HOME_APP");
+        //xhr.open("GET", "https://api.eticket.sn/eticket/auth/terminal/login/"+document.getElementById('code').value+"/HOME_APP");
+        xhr.open("GET", "https://api.eticket.sn/eticket/home-app/terminal/login/"+document.getElementById('code').value+"/HOME_APP");
         xhr.setRequestHeader("accept", "*/*");
         xhr.setRequestHeader("Content-Type", "application/json");
         //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
