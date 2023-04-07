@@ -64,8 +64,9 @@ ticketSerice.simulateCode();
 
 if (!sessionStorage.getItem("token")){
     location.href = location.protocol + '//' + location.host + '/login.html';
+} else {
+    ticketSerice.simulateToken(sessionStorage.getItem("token"));
 }
-ticketSerice.simulateToken(sessionStorage.getItem("token"));
 
 var calledTicketsSection = document.getElementById('calledTickets');
 var lastTicketCalled = document.getElementById('lastTicketCalled');
