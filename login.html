@@ -20,7 +20,7 @@
             <form>
                 <div class="mb-3">
                     <label for="code" class="form-label">Code d'acces</label>
-                    <input type="number" class="form-control" id="code" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="code" aria-describedby="emailHelp">
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <a class="btn btn-primary" onclick="submitCode();">Submit</button>
@@ -34,7 +34,7 @@
 <script type="text/javascript">
     function submitCode() {
         // console.log(document.getElementById('code').value);
-        const data = JSON.stringify({
+        /*const data = JSON.stringify({
             "accessCode": document.getElementById('code').value,
             "app": "HOME_APP"
         });
@@ -45,15 +45,16 @@
             if (this.readyState === this.DONE) {
                 console.log(this.responseText);
             }
-        });
+        });*/
 
         //xhr.open("GET", "https://api.eticket.sn/eticket/auth/terminal/login/"+document.getElementById('code').value+"/HOME_APP");
-        xhr.open("GET", "https://api.eticket.sn/eticket/home-app/terminal/login/"+document.getElementById('code').value+"/HOME_APP");
-        xhr.setRequestHeader("accept", "*/*");
-        xhr.setRequestHeader("Content-Type", "application/json");
+       // xhr.open("GET", "https://api.eticket.sn/eticket/home-app/terminal/login/"+document.getElementById('code').value+"/HOME_APP");
+       // xhr.setRequestHeader("accept", "*/*");
+       // xhr.setRequestHeader("Content-Type", "application/json");
         //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-        console.log(data);
-        xhr.send();
+        //console.log(data);
+        //xhr.send();
+        sessionStorage.setItem("token", document.getElementById('code').value);
     }
 </script>
 
