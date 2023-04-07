@@ -60,9 +60,9 @@ class TicketService {
 
 ticketSerice = new TicketService();
 
-ticketSerice.simulateCode();
 
 if (!sessionStorage.getItem("token")){
+    ticketSerice.simulateCode();
     location.href = location.protocol + '//' + location.host + '/login.html';
 } else {
     ticketSerice.simulateToken(sessionStorage.getItem("token"));
