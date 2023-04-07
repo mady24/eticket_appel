@@ -50,7 +50,7 @@ class TicketService {
     simulateToken(jwtoken) {
         var request = new XMLHttpRequest();
         request.open("POST","https://api.eticket.sn/eticket/home-app/notification-token/BNEQOtyPxMECvuYexToS5Idmuct7WeuFiMP7QREsEN-nMvT6EDHzHgY18gMKX2l7fJNwqWHi6-owDqvt7-N5yZo", true);
-        xmlHttpRequest.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
+        request.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
         request.onreadystatechange = function () {
             console.log(this);
         }
