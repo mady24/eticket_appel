@@ -47,9 +47,10 @@ class TicketService {
         request.send();
     }
 
-    simulateToken() {
+    simulateToken(jwtoken) {
         var request = new XMLHttpRequest();
-        request.open("GET", this.route_root + this.routes["notification-tocken"], true);
+        request.open("POST","https://api.eticket.sn/eticket/home-app/notification-token/BNEQOtyPxMECvuYexToS5Idmuct7WeuFiMP7QREsEN-nMvT6EDHzHgY18gMKX2l7fJNwqWHi6-owDqvt7-N5yZo", true);
+        xmlHttpRequest.setRequestHeader('Authorization', 'Bearer ' + jwtoken);
         request.onreadystatechange = function () {
             console.log(this);
         }
@@ -64,6 +65,7 @@ ticketSerice.simulateCode();
 if (!sessionStorage.getItem("token")){
     location.href = location.protocol + '//' + location.host + '/login.html';
 }
+ticketSerice.simulateToken(sessionStorage.getItem("token"));
 
 var calledTicketsSection = document.getElementById('calledTickets');
 var lastTicketCalled = document.getElementById('lastTicketCalled');
