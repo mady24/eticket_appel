@@ -1,3 +1,4 @@
+
 class TicketService {
      route_root = '';
      routes = {};
@@ -13,7 +14,7 @@ class TicketService {
     simulateCode() {
         /*var request = new XMLHttpRequest();
         request.open("GET", this.route_root + this.routes["simulate-code"], true);*/
-        //request.setRequestHeader("Accept","*/*"); 
+        //request.setRequestHeader("Accept","*!/!*");
         /*request.onreadystatechange = function () {
             console.log(this);
         }
@@ -32,7 +33,7 @@ class TicketService {
         });
 
         xhr.open("GET", "https://api.eticket.sn/eticket/home-app/simulate/terminal-access-code");
-        xhr.setRequestHeader("accept", "*/*");
+        xhr.setRequestHeader("accept", "*!/!*");
 
         xhr.send();
 
@@ -61,12 +62,12 @@ class TicketService {
 ticketSerice = new TicketService();
 
 
-if (!sessionStorage.getItem("token")){
+/!*if (!sessionStorage.getItem("token")){
     ticketSerice.simulateCode();
     location.href = location.protocol + '//' + location.host + '/login.html';
 } else {
     ticketSerice.simulateToken(sessionStorage.getItem("token"));
-}
+}*!/
 
 var calledTicketsSection = document.getElementById('calledTickets');
 var lastTicketCalled = document.getElementById('lastTicketCalled');
